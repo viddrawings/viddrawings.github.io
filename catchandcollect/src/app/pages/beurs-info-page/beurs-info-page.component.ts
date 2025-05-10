@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {SeparatorComponent} from "../components/separator/separator.component";
+import {SeparatorComponent} from "../../components/separator/separator.component";
 import {MatIconModule} from '@angular/material/icon';
 
 @Component({

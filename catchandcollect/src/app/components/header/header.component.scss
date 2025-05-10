@@ -1,3 +1,34 @@
-.example-spacer {
-  flex: 1 1 auto;
+.main-toolbar {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .spacer-left,
+  .spacer-right {
+    flex: 1;
+  }
+
+  .toolbar-center {
+    display: flex;
+    gap: 24px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

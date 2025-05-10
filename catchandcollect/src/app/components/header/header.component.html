@@ -1,15 +1,15 @@
-<mat-toolbar>
-  <span>Catch & Collect</span>
-  <span class="example-spacer"></span>
-  <a routerLink="/info">Beursinfo</a>
-  <a routerLink="/tickets">Tickets</a>
-  <a routerLink="/standhouders">Standhouders</a>
-  <a routerLink="faq">FAQ</a>
-  <a routerLink="contact">Contact</a>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
+<mat-toolbar class="main-toolbar">
+  <span class="logo" routerLink="/">Catch & Collect</span>
+
+  <span class="spacer-left"></span>
+
+  <nav class="toolbar-center">
+    <a routerLink="/info">Beursinfo</a>
+    <a routerLink="/tickets">Tickets</a>
+    <a routerLink="/standhouders">Standhouders</a>
+    <a routerLink="/faq">FAQ</a>
+    <a routerLink="/contact">Contact</a>
+  </nav>
+
+  <span class="spacer-right"></span>
 </mat-toolbar>
