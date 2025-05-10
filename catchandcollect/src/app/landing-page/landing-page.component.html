@@ -1,5 +1,3 @@
-<app-header></app-header>
-
 <div class="landing-page">
   <div class="landing-page__cta">
     <div class="landing-page__cta-container">
@@ -8,7 +6,7 @@
         CATCH & COLLECT!
       </h1>
       <p class="landing-page__tagline">De beurs voor fans, verzamelaars en magische ruilavonturen!</p>
-      <button class="landing-page__cta-button">BESTEL JE TICKETS</button>
+      <button class="landing-page__cta-button" routerLink="/tickets">BESTEL JE TICKETS</button>
     </div>
   </div>
 
@@ -34,20 +32,18 @@
   <div class="landing-page__section landing-page__section--highlight">
     <h2 class="landing-page__heading">WAT KUN JE VERWACHTEN?</h2>
     <ul class="landing-page__list">
-      <li>
-        <img src="assets/icons/collectible_cards.svg" alt="Collectible Cards Icon" class="landing-page__icon">
-        Kaarten ruilen & kopen
+      <li class="landing-page__item">
+        <img src="public/kaarten.png" alt="Collectible Cards Icon" class="landing-page__icon" />
+        <span class="landing-page__text">Kaarten ruilen & kopen</span>
       </li>
-      <li>
-        <img src="assets/icons/merchandise.svg" alt="Merchandise Icon" class="landing-page__icon">
-        Exclusieve merchandise en zeldzame kaarten
+      <li class="landing-page__item">
+        <img src="public/dart.png" alt="Merchandise Icon" class="landing-page__icon" />
+        <span class="landing-page__text">Exclusieve merchandise en zeldzame kaarten</span>
       </li>
-      <li>
-        <img src="assets/icons/collectible_games.svg" alt="Collectible Games Icon" class="landing-page__icon">
-        Speciale gasten & 200+ kramen
+      <li class="landing-page__item">
+        <img src="public/ster.png" alt="Collectible Games Icon" class="landing-page__icon" />
+        <span class="landing-page__text">Speciale gasten & 200+ kramen</span>
       </li>
     </ul>
   </div>
 </div>
-
-<app-footer></app-footer>
