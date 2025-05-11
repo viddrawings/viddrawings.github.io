@@ -38,12 +38,13 @@ export class StandhoudersAanmeldenComponent {
 
   get estimatedCost(): number {
     const {standType, stoelen, extraTickets, stroom} = this.form.value;
+    const standCount = this.form.get('standCount')?.value;
 
     let totaal = 0;
 
     switch (standType) {
       case 'standaard':
-        totaal += 75;
+        totaal += 75 * standCount;
         break;
       case 'kleine-ondernemer':
         totaal += 30;
@@ -60,7 +61,7 @@ export class StandhoudersAanmeldenComponent {
 
     return totaal;
   }
-  
+
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
@@ -72,7 +73,10 @@ export class StandhoudersAanmeldenComponent {
       kvk: ['', [Validators.pattern(/^\d{8}$/)]],
       email: ['', [Validators.required, Validators.email]],
       telefoon: ['', Validators.required],
+      adres: ['', Validators.required],
+      btwNummer: ['', [Validators.pattern(/^[A-Z]{2}\d{9}$/)]],
       standType: ['standaard', Validators.required],
+      standCount: ['1', [Validators.required, Validators.min(1)]],
       stoelen: [0, [Validators.min(0)]],
       extraTickets: [0, [Validators.min(0)]],
       stroom: [false],

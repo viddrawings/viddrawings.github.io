@@ -10,6 +10,19 @@
     </mat-select>
   </mat-form-field>
 
+  <!--  TODO: don't show on VIP or kleine ondernemer -->
+  <mat-form-field appearance="fill">
+    <mat-label>Aantal tafels</mat-label>
+    <input matInput type="number" formControlName="standCount" min="1"/>
+    <mat-error *ngIf="form.controls['standCount'].hasError('required')">
+      Aantal tafels is verplicht.
+    </mat-error>
+    <mat-error *ngIf="form.controls['standCount'].hasError('min')">
+      Aantal tafels moet groter dan of gelijk zijn aan 1.
+    </mat-error>
+  </mat-form-field>
+
+  <!--  TODO: conditional show -->
   <p>Kleine ondernemer / hobbyist is bij 1/2 tafel inclusief: 1 stoel, 1 ticket</p>
   <p>Kleine ondernemer / hobbyist is bij 1 tafel inclusief: 2 stoelen, 2 tickets</p>
   <p>Standaard is inclusief: 2 stoelen, 2 tickets</p>
@@ -33,6 +46,14 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
+      <mat-label>Adres</mat-label>
+      <input matInput formControlName="adres"/>
+      <mat-error *ngIf="form.controls['adres'].hasError('required')">
+        Adres is verplicht.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
       <mat-label>KvK-nummer</mat-label>
       <input matInput formControlName="kvk"/>
       <mat-error *ngIf="form.controls['kvk'].hasError('required')">
@@ -40,6 +61,14 @@
       </mat-error>
       <mat-error *ngIf="form.controls['kvk'].hasError('pattern')">
         Vul een geldig KvK-nummer in (8 cijfers).
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>BTW-nummer</mat-label>
+      <input matInput formControlName="btwNummer"/>
+      <mat-error *ngIf="form.controls['btwNummer'].hasError('required')">
+        BTW-nummer is verplicht.
       </mat-error>
     </mat-form-field>
   </ng-container>
@@ -86,7 +115,7 @@
   </ng-container>
 
   <div class="totaal-bedrag" style="margin-top: 1rem; font-weight: bold; margin-bottom: 20px;">
-    Geschatte kosten: €{{ estimatedCost }}
+    Geschatte kosten: €{{ estimatedCost }} (incl. btw)
   </div>
 
   <button mat-raised-button color="primary" type="submit" [disabled]="loading">
