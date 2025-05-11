@@ -27,9 +27,9 @@
 
   &__cta {
     @include m.flex-center(column, v.$spacing-md);
-    background-color: v.$color-primary;
-    //background: url('/public/banner.png') no-repeat center center;
-    //background-size: cover;
+    //background-color: v.$color-primary;
+    background: url('/public/seamless.png') center center;
+    background-size: contain;
 
     width: 100%;
     padding: v.$spacing-xl;

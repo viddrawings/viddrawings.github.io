@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use 'variables' as v;
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
 
 html, body {
@@ -17,10 +18,62 @@ body {
   -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
 }
 
-// Customize the entire app. Change :root to your selector if you want to scope the styles.
-:root {
-  @include mat.toolbar-overrides((
-    container-background-color: #005CB0,
-    container-text-color: white,
-  ));
+@include mat.toolbar-overrides((
+  container-background-color: #005CB0,
+  container-text-color: white,
+));
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight {
+  background-color: v.$color-accent;
+}
+
+.page__hero {
+  background: v.$color-accent;
+  font-size: v.$font-size-lg;
+  text-align: center;
+
+  &-title {
+    color: v.$color-secondary;
+  }
+}
+
+.section {
+  padding: 20px;
+
+  &__title {
+    color: v.$color-secondary;
+    text-align: left;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+
+    img {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+  }
+
+  &__text {
+    flex: 1;
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
 }

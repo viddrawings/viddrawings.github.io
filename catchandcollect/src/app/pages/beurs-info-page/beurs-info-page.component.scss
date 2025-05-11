@@ -1,85 +1,30 @@
 @use '../../../variables' as v;
 @use '../../../mixins' as m;
 
-.beurs-info-page {
+.location {
+  color: v.$color-accent-secondary;
+}
+
+.clock {
+  color: v.$color-text-dark;
+}
+
+.align-icons {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
 
-  .location {
-    color: v.$color-accent-secondary;
-  }
-
-  .clock {
-    color: v.$color-text-dark;
-  }
-
-  .align-icons {
+  &__text {
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    flex-direction: column;
 
-    &__text {
-      display: flex;
-      flex-direction: column;
-
-      p {
-        margin: 0;
-        line-height: 1.4;
-      }
-    }
-  }
-
-  .align-icons + .align-icons {
-    margin-top: 12px;
-  }
-
-  &__hero {
-    background: v.$color-accent;
-    font-size: v.$font-size-lg;
-    text-align: center;
-
-    &-title {
-      color: v.$color-secondary;
-    }
-  }
-
-  &__section {
-    padding: 20px;
-
-    &-title {
-      color: v.$color-secondary;
-      text-align: left;
-    }
-
-    &-content {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 30px;
-
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-
-      img {
-        max-width: 200px;
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        flex-shrink: 0;
-      }
-    }
-
-    &__text {
-      flex: 1;
-
-      p {
-        margin-bottom: 10px;
-      }
+    p {
+      margin: 0;
+      line-height: 1.4;
     }
   }
 }
 
-.highlight {
-  background-color: v.$color-accent;
+.align-icons + .align-icons {
+  margin-top: 12px;
 }
