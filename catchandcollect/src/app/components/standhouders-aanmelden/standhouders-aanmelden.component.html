@@ -1,0 +1,98 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Aanmelden als standhouder</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Standtype</mat-label>
+    <mat-select formControlName="standType">
+      <mat-option value="standaard">Standaard</mat-option>
+      <mat-option value="vip">VIP</mat-option>
+      <mat-option value="kleine-ondernemer">Kleine ondernemer / hobbyist</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <p>Kleine ondernemer / hobbyist is bij 1/2 tafel inclusief: 1 stoel, 1 ticket</p>
+  <p>Kleine ondernemer / hobbyist is bij 1 tafel inclusief: 2 stoelen, 2 tickets</p>
+  <p>Standaard is inclusief: 2 stoelen, 2 tickets</p>
+  <p>VIP is inclusief: 4 tickets. Exclusief: stoelen, stroom</p>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Naam contactpersoon</mat-label>
+    <input matInput formControlName="contactpersoon"/>
+    <mat-error *ngIf="form.controls['contactpersoon'].hasError('required')">
+      Naam contactpersoon is verplicht.
+    </mat-error>
+  </mat-form-field>
+
+  <ng-container *ngIf="showBusinessVelden">
+    <mat-form-field appearance="fill">
+      <mat-label>Bedrijfsnaam</mat-label>
+      <input matInput formControlName="bedrijfsnaam"/>
+      <mat-error *ngIf="form.controls['bedrijfsnaam'].hasError('required')">
+        Bedrijfsnaam is verplicht.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>KvK-nummer</mat-label>
+      <input matInput formControlName="kvk"/>
+      <mat-error *ngIf="form.controls['kvk'].hasError('required')">
+        KvK-nummer is verplicht.
+      </mat-error>
+      <mat-error *ngIf="form.controls['kvk'].hasError('pattern')">
+        Vul een geldig KvK-nummer in (8 cijfers).
+      </mat-error>
+    </mat-form-field>
+  </ng-container>
+
+  <mat-form-field appearance="fill">
+    <mat-label>E-mailadres</mat-label>
+    <input matInput formControlName="email"/>
+    <mat-error *ngIf="form.controls['email'].hasError('required')">
+      E-mailadres is verplicht.
+    </mat-error>
+    <mat-error *ngIf="form.controls['email'].hasError('email')">
+      Vul een geldig e-mailadres in.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Telefoonnummer</mat-label>
+    <input matInput formControlName="telefoon"/>
+    <mat-error *ngIf="form.controls['telefoon'].hasError('required')">
+      Telefoonnummer is verplicht.
+    </mat-error>
+  </mat-form-field>
+
+  <ng-container *ngIf="showBusinessVelden">
+    <h3>Extra's</h3>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Aantal extra stoelen (+ &euro; 10,00)</mat-label>
+      <input matInput type="number" formControlName="stoelen"/>
+      <mat-error *ngIf="form.controls['stoelen'].hasError('min')">
+        Aantal stoelen moet groter dan of gelijk zijn aan 0.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Aantal extra tickets (+ &euro; 10,00)</mat-label>
+      <input matInput type="number" formControlName="extraTickets"/>
+      <mat-error *ngIf="form.controls['extraTickets'].hasError('min')">
+        Extra tickets moeten groter dan of gelijk zijn aan 0.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-checkbox formControlName="stroom">Stroomaansluiting nodig (tot 750 watt); + &euro; 15,00</mat-checkbox>
+  </ng-container>
+
+  <div class="totaal-bedrag" style="margin-top: 1rem; font-weight: bold; margin-bottom: 20px;">
+    Geschatte kosten: €{{ estimatedCost }}
+  </div>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+    Verzenden
+  </button>
+
+  <p *ngIf="success" style="color: green;">Aanvraag succesvol verzonden!</p>
+  <p *ngIf="error" style="color: red;">Er is iets misgegaan. Probeer het opnieuw.</p>
+</form>
