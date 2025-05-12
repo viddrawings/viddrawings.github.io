@@ -1,0 +1,154 @@
+@use '../../../variables' as v;
+@use '../../../mixins' as m;
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    text-align: left;
+    line-height: 1.4;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+
+    img {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+  }
+
+  &__cta {
+    @include m.flex-center(column, v.$spacing-md);
+    //background-color: v.$color-primary;
+    background: url('/public/seamless.png') center center;
+    background-size: contain;
+
+    width: 100%;
+    padding: v.$spacing-xl;
+    text-align: center;
+  }
+
+  &__cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include m.heading-style(100px, v.$color-text-light);
+    -webkit-text-stroke: 4px v.$color-text-dark;
+  }
+
+  &__title span {
+    font-size: 80px;
+    margin-bottom: -40px;
+  }
+
+  &__tagline {
+    color: v.$color-accent;
+    font-size: v.$font-size-xxl;
+    margin-top: -50px;
+  }
+
+  &__cta-button {
+    font-family: v.$font-family-primary;
+    font-size: v.$font-size-lg;
+    font-weight: 400;
+    letter-spacing: 2px;
+    background-color: v.$color-accent-secondary;
+    color: v.$color-text-light;
+    border: 6px solid v.$color-text-dark;
+    border-radius: v.$border-radius-pill;
+    padding: v.$spacing-sm v.$spacing-xl;
+    margin-top: v.$spacing-md;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten(v.$color-accent-secondary, 10%);
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    padding: v.$spacing-xl;
+    width: 100%;
+    text-align: center;
+
+    &--icon {
+      @include m.flex-center(row, v.$spacing-lg);
+      gap: v.$spacing-lg;
+
+      @include m.respond-to(sm) {
+        flex-direction: column;
+      }
+    }
+
+    &--highlight {
+      background-color: v.$color-accent;
+      color: v.$color-text-dark;
+      padding: v.$spacing-lg;
+    }
+  }
+
+  &__heading {
+    @include m.heading-style(v.$font-size-xxl, v.$color-secondary);
+    margin-bottom: v.$spacing-md;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: v.$font-size-lg;
+      color: v.$color-text-dark;
+      margin-bottom: v.$spacing-sm;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  &__icon {
+    width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    color: v.$color-text-dark;
+
+    &--big {
+      font-size: 1.3rem;
+      line-height: 1.4;
+      font-weight: bold;
+      color: v.$color-secondary;
+    }
+  }
+}

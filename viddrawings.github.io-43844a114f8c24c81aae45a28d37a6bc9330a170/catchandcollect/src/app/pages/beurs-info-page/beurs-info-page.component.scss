@@ -1,0 +1,30 @@
+@use '../../../variables' as v;
+@use '../../../mixins' as m;
+
+.location {
+  color: v.$color-accent-secondary;
+}
+
+.clock {
+  color: v.$color-text-dark;
+}
+
+.align-icons {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+}
+
+.align-icons + .align-icons {
+  margin-top: 12px;
+}

@@ -1,0 +1,43 @@
+@use "../../../variables" as v;
+
+.main-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+
+  img {
+    margin-top: 8px;
+    height: 180px;
+    width: auto;
+    margin-right: 0.5rem;
+  }
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .spacer-left,
+  .spacer-right {
+    flex: 1;
+  }
+
+  .toolbar-center {
+    display: flex;
+    gap: 24px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+        color: v.$color-accent;
+      }
+    }
+  }
+}

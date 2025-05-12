@@ -1,0 +1,49 @@
+// COLORS
+$color-primary: #0891dd;
+$color-secondary: #174d9e;
+$color-accent: #ffca2c;
+$color-accent-secondary: #e01c1a;
+
+$color-text-light: #ffffff;
+$color-text-dark: #01224c;
+$color-border-dark: #01224c;
+
+// FONT
+$font-family-primary: "Cal Sans", sans-serif;
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 2rem;
+$font-size-xxl: 2.5rem;
+$font-size-xxxl: 4rem;
+
+// TEXT & STROKE
+$color-text-light: #ffffff;
+$color-stroke-dark: #01224c;
+
+// SPACING
+$spacing-xxs: 0.25rem;
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 2.5rem;
+$spacing-xxl: 4rem;
+
+// BORDER
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-pill: 9999px;
+
+// BREAKPOINTS
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1440px;
+
+// Z-INDEX
+$z-header: 1000;
+$z-modal: 1050;
+$z-overlay: 1100;
