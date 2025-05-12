@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {SeparatorComponent} from "../../components/separator/separator.component";
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-faq-page',
   imports: [
-    SeparatorComponent
+    RouterLink
   ],
   templateUrl: './faq-page.component.html',
   styleUrl: './faq-page.component.scss'

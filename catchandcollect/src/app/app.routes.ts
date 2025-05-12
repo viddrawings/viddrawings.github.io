@@ -27,6 +27,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/terms-page/terms-page.component').then(m => m.TermsPageComponent)
   },
   {
+    'path': 'reglement-standhouder',
+    loadComponent: () => import('./pages/terms-standhouders-page/terms-standhouders-page.component').then(m => m.TermsStandhoudersPageComponent)
+  },
+  {
     'path': 'contact',
     loadComponent: () => import('./pages/contact-page/contact-page.component').then(m => m.ContactPageComponent)
   },
