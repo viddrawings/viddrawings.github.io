@@ -31,9 +31,20 @@ export class StandhoudersAanmeldenComponent {
 
   form: FormGroup;
 
-  get showBusinessVelden(): boolean {
-    const type = this.form.get('standType')?.value;
-    return type !== 'kleine-ondernemer';
+  get showBusinessFields(): boolean {
+    return this.form.get('standType')?.value !== 'kleine-ondernemer';
+  }
+
+  get vipFields(): boolean {
+    return this.form.get('standType')?.value === 'vip';
+  }
+
+  get smallBusinessFields(): boolean {
+    return this.form.get('standType')?.value === 'kleine-ondernemer';
+  }
+
+  get standardFields(): boolean {
+    return this.form.get('standType')?.value === 'standaard';
   }
 
   get estimatedCost(): number {
@@ -47,7 +58,8 @@ export class StandhoudersAanmeldenComponent {
         totaal += 75 * standCount;
         break;
       case 'kleine-ondernemer':
-        totaal += 30;
+        const standCountInt = standCount !== '1' ? 0.5 : 1;
+        totaal += 45 * standCountInt;
         break;
       case 'vip':
         totaal += 500;
@@ -75,8 +87,8 @@ export class StandhoudersAanmeldenComponent {
       telefoon: ['', Validators.required],
       adres: ['', Validators.required],
       btwNummer: ['', [Validators.pattern(/^[A-Z]{2}\d{9}$/)]],
-      standType: ['standaard', Validators.required],
-      standCount: ['1', [Validators.required, Validators.min(1)]],
+      standType: ['standaard'],
+      standCount: ['1'],
       stoelen: [0, [Validators.min(0)]],
       extraTickets: [0, [Validators.min(0)]],
       stroom: [false],
