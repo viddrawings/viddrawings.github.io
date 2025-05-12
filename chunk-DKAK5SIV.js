@@ -1,0 +1,1 @@
+import{fb as o,wb as a}from"./chunk-TUTLULJE.js";var n=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=o({type:t,selectors:[["app-separator"]],decls:1,vars:0,consts:[[1,"separator"]],template:function(e,p){e&1&&a(0,"div",0)},styles:[".separator[_ngcontent-%COMP%]{background-color:#e01c1a;width:100%;height:20px;display:block}"]})};export{n as a};
