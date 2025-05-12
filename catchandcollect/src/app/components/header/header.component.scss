@@ -1,8 +1,16 @@
+@use "../../../variables" as v;
+
 .main-toolbar {
-  color: white;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 1rem;
+
+  img {
+    margin-top: 8px;
+    height: 180px;
+    width: auto;
+    margin-right: 0.5rem;
+  }
 
   .logo {
     font-weight: bold;
@@ -28,6 +36,7 @@
 
       &:hover {
         text-decoration: underline;
+        color: v.$color-accent;
       }
     }
   }
