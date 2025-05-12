@@ -1,0 +1,12 @@
+{
+  "routes": {
+    "/": {},
+    "/contact": {},
+    "/faq": {},
+    "/info": {},
+    "/reglement": {},
+    "/reglement-standhouder": {},
+    "/standhouders": {},
+    "/tickets": {}
+  }
+}
